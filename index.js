@@ -5,15 +5,18 @@ var chalk = require('chalk');
 var figures = require('figures');
 var arrow = ' ' + figures.arrowRight + ' ';
 
-function format(size) {
-	return chalk.red(prettyBytes(size));
+function formatY(size) {
+	return chalk.yellow(prettyBytes(size));
+}
+function formatG(size) {
+	return chalk.green(prettyBytes(size));
 }
 
 module.exports = function (src, useGzip) {
-	var ret = format(typeof src === 'number' ? src : src.length);
+	var ret = formatY(typeof src === 'number' ? src : src.length);
 
 	if (useGzip === true && typeof src !== 'number') {
-		ret += arrow + format(gzipSize.sync(src)) + chalk.gray(' (gzip)');
+		ret += arrow + formatG(gzipSize.sync(src)) + chalk.gray(' (gzip)');
 	}
 
 	return ret;
