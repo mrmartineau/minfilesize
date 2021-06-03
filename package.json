@@ -34,7 +34,7 @@
     "chalk": "^1.0.0",
     "figures": "^1.0.1",
     "gzip-size": "^1.0.0",
-    "pretty-bytes": "^1.0.0"
+    "pretty-bytes": "^3.0.0"
   },
   "devDependencies": {
     "ava": "0.0.4"
